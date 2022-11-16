@@ -4,6 +4,7 @@ import requests
 import json
 import random
 from replit import db
+from web_server import web_server
 
 intent = discord.Intents.default()
 intent.members = True
@@ -116,6 +117,9 @@ async def on_message(message):
     else:
       db["responding"] = False
       await message.channel.send("Chatbot responding is off")
-    
+
+# to run the web server
+web_server()
+
 # to run the bot
 client.run(bot_secret)
